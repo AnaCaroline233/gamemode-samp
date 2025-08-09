@@ -1,13 +1,16 @@
 
 #include <a_samp>
-
+sdpowp´dkeopdç
 main()
 {
 	print("\n----------------------------------");
 	print(" Blank Gamemode by your name here");
 	print("----------------------------------\n");
 }
-//wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+<<<<<<< HEAD
+//wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwdddddddddddddddddddddddddddddddwwwwwwww
+=======
+>>>>>>> 024ceba0200a14651c1912d7cc96bf6eba25d809
 
 public OnGameModeInit()
 {

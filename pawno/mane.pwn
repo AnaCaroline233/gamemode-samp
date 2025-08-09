@@ -1,17 +1,8 @@
 
 
 #include <a_samp>
-#include <a_mysql>
-new MySQL:dbHandle;
 
-enum PlayerDados{
-	pID,
-	pNome[20],
-	pNivel,
-	pGrana
-};
 
-new player [MAX_PLAYERS][PlayerDados];
 main()
 {
 	print("\n----------------------------------");
@@ -22,19 +13,7 @@ main()
 
 public OnGameModeInit()
 {
-    dbHandle = mysql_connect("localhost", "root", "", "samp_server");
-
-    if (dbHandle == MYSQL_INVALID_HANDLE || mysql_errno(dbHandle) != 0)
-    {
-        print("Erro ao conectar ao banco de dados.");
-        SendRconCommand("exit");
-        return 1;
-    }
-
-    print("Conectado ao MySQL com sucesso!");
-	SetGameModeText("Meu GM");
-	AddPlayerClass(0, 1958.3783, 1343.1572, 15.3746, 269.1425, 0, 0, 0, 0, 0, 0);
-	return 1;
+    
 }
 
 public OnGameModeExit()
@@ -44,19 +23,13 @@ public OnGameModeExit()
 
 public OnPlayerRequestClass(playerid, classid)
 {
-	SetPlayerPos(playerid, 1958.3783, 1343.1572, 15.3746);
-	SetPlayerCameraPos(playerid, 1958.3783, 1343.1572, 15.3746);
-	SetPlayerCameraLookAt(playerid, 1958.3783, 1343.1572, 15.3746);
+
 	return 1;
 }
 
 public OnPlayerConnect(playerid)
 {
-    GetPlayerName(playerid, player[playerid][pNome], 20);
-    player[playerid][pID]++;
-    player[playerid][pNivel] = 10;
-    SetPlayerScore(playerid, player[playerid][pNivel]);
-    SendClientMessageToAll(-1,"Bem Vindo");
+    
 	return 1;
 }
 
@@ -67,9 +40,7 @@ public OnPlayerDisconnect(playerid, reason)
 
 public OnPlayerSpawn(playerid)
 {
-    new message[128];
-    format(message, sizeof(message),"Nome: %s\nNivel: %d\nID: %d\n",player[playerid][pNome],player[playerid][pNivel],player[playerid][pID] );
-	SendClientMessage(playerid,01,message);
+    
 	return 1;
 }
 
@@ -91,22 +62,6 @@ public OnVehicleDeath(vehicleid, killerid)
 public OnPlayerText(playerid, text[])
 {
 	return 1;
-}
-
-public OnPlayerCommandText(playerid, cmdtext[])
-{
-	if (strcmp("/bixera", cmdtext, true, 10) == 0)
-	{
-		SendClientMessage(playerid,-1,"ja era");
-		return 1;
-	}
-	if (strcmp("/dararma", cmdtext, true, 10) == 0)
-	{
-		SendClientMessage(playerid,-1,"arminha");
-		GivePlayerWeapon(playerid, 28, 999);
-		return 1;
-	}
-	return SendClientMessage(playerid,-1,"Nao temos esse comando");
 }
 
 public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)

@@ -11,15 +11,13 @@
 #include <a_samp>
 #include <sscanf2>
 #include <zcmd>
+#include <streamer>
 main()
 {
 	print("\n----------------------------------");
 	print(" Blank Gamemode by your name here");
 	print("----------------------------------\n");
 }
-açpçldl~çsvk,
-
-
 public OnGameModeInit()
 {
 	

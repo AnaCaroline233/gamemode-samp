@@ -17,7 +17,7 @@ main()
 	print(" Blank Gamemode by your name here");
 	print("----------------------------------\n");
 }
-
+açpçldl~çsvk,
 
 
 public OnGameModeInit()

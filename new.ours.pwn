@@ -9,22 +9,21 @@
 #define COR_LARANJA       0xFFA500AA
 
 #include <a_samp>
-#include <sscanf2>
-#include <zcmd>
-#include <streamer>
-dsfefe
+
 main()
 {
 	print("\n----------------------------------");
 	print(" Blank Gamemode by your name here");
 	print("----------------------------------\n");
 }
+
+//=======//
+
 public OnGameModeInit()
 {
 	
 	SetGameModeText("Blank Script");
 	AddPlayerClass(0, 1958.3783, 1343.1572, 15.3746, 269.1425, 0, 0, 0, 0, 0, 0);
-	CreateDynamicPickup(1242, 2, 1958.3783+5, 1343.1572, 15.3746);
 	return 1;
 }
 
@@ -53,11 +52,10 @@ public OnPlayerDisconnect(playerid, reason)
 
 public OnPlayerSpawn(playerid)
 {
-	SendClientMessage(playerid,COR_VERMELHO,"Seja bem vindo");
-	new msg[64],nome[36];
+	new msg [128], nome [24];
 	GetPlayerName(playerid, nome, sizeof(nome));
-	format(msg,sizeof(msg),"Bem vindo: %s","Bixera");
-	SendClientMessage(2,COR_AZUL,"Seja bem vindo");
+	format(msg, sizeof(msg), "nome %s score %d id %d", "bixera", 100, 2);
+	SendClientMessage(playerid, -1, msg);
 	return 1;
 }
 

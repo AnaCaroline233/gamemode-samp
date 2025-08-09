@@ -52,6 +52,11 @@ public OnPlayerDisconnect(playerid, reason)
 
 public OnPlayerSpawn(playerid)
 {
+	SendClientMessage(playerid,COR_VERMELHO,"Seja bem vindo");
+	new msg[64],nome[36];
+	GetPlayerName(playerid, nome, sizeof(nome));
+	format(msg,sizeof(msg),"Bem vindo: %s",nome);
+	SendClientMessage(playerid,COR_AZUL,"Seja bem vindo");
 	return 1;
 }
 

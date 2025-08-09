@@ -1,6 +1,6 @@
 
 #include <a_samp>
-
+sdpowp´dkeopç
 main()
 {
 	print("\n----------------------------------");

@@ -1,16 +1,23 @@
+#define COR_VERMELHO      0xFF0000AA
+#define COR_VERDE         0x00FF00AA
+#define COR_AZUL          0x0000FFAA
+#define COR_BRANCO        0xFFFFFFFF
+#define COR_PRETO         0x000000AA
+#define COR_AMARELO       0xFFFF00AA
+#define COR_CIANO         0x00FFFFFF
+#define COR_ROSA          0xFF00FFAA
+#define COR_LARANJA       0xFFA500AA
 
 #include <a_samp>
-sdpowp´dkeopdç
+
 main()
 {
 	print("\n----------------------------------");
 	print(" Blank Gamemode by your name here");
 	print("----------------------------------\n");
 }
-<<<<<<< HEAD
-//wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwdddddddddddddddddddddddddddddddwwwwwwww
-=======
->>>>>>> 024ceba0200a14651c1912d7cc96bf6eba25d809
+
+
 
 public OnGameModeInit()
 {

@@ -1,0 +1,28 @@
+# SA-MP / Pawn - artefatos de build e temporários
+*.amx
+*.log
+*.tmp
+*.bak
+server_log.txt
+
+# Dados gerados em runtime (opcional: ignore se não quiser versionar)
+scriptfiles/
+logs/
+cache/
+
+# IDEs/editores
+.vscode/
+.idea/
+.vs/
+*.suo
+*.user
+
+# Lixo do SO
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Opcional: não versionar os binários do compilador Pawn
+pawno/*.exe
+pawno/*.dll
+pawno/*.ini

@@ -9,7 +9,8 @@
 #define COR_LARANJA       0xFFA500AA
 
 #include <a_samp>
-
+#include <sscanf2>
+#include <zcmd>
 main()
 {
 	print("\n----------------------------------");
@@ -55,8 +56,8 @@ public OnPlayerSpawn(playerid)
 	SendClientMessage(playerid,COR_VERMELHO,"Seja bem vindo");
 	new msg[64],nome[36];
 	GetPlayerName(playerid, nome, sizeof(nome));
-	format(msg,sizeof(msg),"Bem vindo: %s",nome);
-	SendClientMessage(playerid,COR_AZUL,"Seja bem vindo");
+	format(msg,sizeof(msg),"Bem vindo: %s","Bixera");
+	SendClientMessage(2,COR_AZUL,"Seja bem vindo");
 	return 1;
 }
 

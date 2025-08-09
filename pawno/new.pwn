@@ -24,7 +24,7 @@ public OnGameModeInit()
 
 	SetGameModeText("Blank Script");
 	AddPlayerClass(0, 1958.3783, 1343.1572, 15.3746, 269.1425, 0, 0, 0, 0, 0, 0);
-	CreateDynamicPickup(1242, 2, 1958.3783+5, 1343.1572, 15.3746);
+	CreateDynamicPickup(1242, 2, 1958.3783, 1343.1572, 15.3746);
 	return 1;
 }
 

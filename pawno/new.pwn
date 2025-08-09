@@ -7,7 +7,7 @@ main()
 	print(" Blank Gamemode by your name here");
 	print("----------------------------------\n");
 }
-wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+//wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
 
 public OnGameModeInit()
 {

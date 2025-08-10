@@ -48,7 +48,21 @@ CMD:criarpickup(playerid,params[])
     new Float:x, Float:y, Float:z;
     GetPlayerPos(playerid, x, y, z);
     CreateDynamicPickup(1240, 2, x, y, z);
+    return 1;
 }
+
+CMD:veh(playerid, params[])
+{
+	new modelid;
+	if(sscanf(params, "i", modelid)) return SendClientMessage(playerid, COR_LARANJA, "Uso correto: /veh [modelo]");
+	
+	new Float:x, Float:y, Float:z;
+	GetPlayerPos(playerid, x, y, z);
+	
+	CreateVehicle(modelid, x, y, z, 0, 0, 0, 100, 0);
+	return 1;
+}
+
 
 public OnPlayerConnect(playerid)
 {

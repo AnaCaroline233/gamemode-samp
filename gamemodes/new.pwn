@@ -24,6 +24,11 @@ public OnGameModeInit()
 
 	SetGameModeText("Blank Script");
 	AddPlayerClass(0, 1958.3783, 1343.1572, 15.3746, 269.1425, 0, 0, 0, 0, 0, 0);
+	
+	DisableInteriorEnterExits();
+	
+	CreateDynamicPickup(1318, 1, 2159.1558,943.1572,10.8203);
+	CreateDynamicPickup(1318, 1, 285.7453,-86.4281,1001.5229, -1, 4);
 	return 1;
 }
 
@@ -53,15 +58,38 @@ CMD:criarpickup(playerid,params[])
 
 CMD:veh(playerid, params[])
 {
-	new modelid;
+	new modelid, car;
 	if(sscanf(params, "i", modelid)) return SendClientMessage(playerid, COR_LARANJA, "Uso correto: /veh [modelo]");
 	
 	new Float:x, Float:y, Float:z;
 	GetPlayerPos(playerid, x, y, z);
 	
-	CreateVehicle(modelid, x, y, z, 0, 0, 0, 100, 0);
+	car = CreateVehicle(modelid, x, y, z, 0, 0, 0, 100, 0);
+	PutPlayerInVehicle(playerid, car, 0);
 	return 1;
 }
+
+CMD:setint(playerid, params[])
+{
+	new id, interior;
+    if(sscanf(params, "ii", id, interior)) return SendClientMessage(playerid, COR_LARANJA, "Uso correto: /setint [id] [interior].");
+
+    SetPlayerInterior(id, interior);
+	return 1;
+}
+
+CMD:setpos(playerid, params[])
+{
+	new Float:x ,Float:y ,Float:z;
+	SendClientMessage(playerid, -1, "1");
+    if(sscanf(params, "fff", x, y ,z)) return SendClientMessage(playerid, COR_LARANJA, "Uso correto: /setint [id] [interior].");
+    SendClientMessage(playerid, -1, "2");
+    SetPlayerPos(playerid, x, y, z);
+	SendClientMessage(playerid, -1, "3");
+	return 1;
+}
+
+
 
 
 public OnPlayerConnect(playerid)
@@ -196,6 +224,23 @@ public OnPlayerInteriorChange(playerid, newinteriorid, oldinteriorid)
 
 public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 {
+    if (IsPlayerInAnyVehicle(playerid)) return 1;
+    
+    if (newkeys & KEY_SECONDARY_ATTACK) //tecla f
+    {   //entradas
+        if (IsPlayerInRangeOfPoint(playerid, 2.0, 2159.1558,943.1572,10.8203))
+        {
+            SetPlayerPos(playerid, 285.9694,-83.2890,1001.5156);
+            SetPlayerInterior(playerid, 4);
+        }
+        //saidas
+        if (IsPlayerInRangeOfPoint(playerid, 2.0, 285.7453,-86.4281,1001.5229))
+        {
+            SetPlayerPos(playerid, 2159.1558,943.1572,10.8203);
+            SetPlayerInterior(playerid, 0);
+        }
+        
+    }
 	return 1;
 }
 
